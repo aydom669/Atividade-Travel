@@ -1,0 +1,951 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,100;1,300&display=swap");
+
+// Reset
+
+* {
+    font-family: 'Poppins' sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    border: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+}
+
+// Reset End
+
+
+// Variaveis
+
+$verde: #219150;
+$Black: #10221b;
+$branco: #fff;
+$cinza__claro: #eee;
+$borda: 2px solid $Black;
+$sombra: 0 .5rem 1rem rgba(0, 0, 0, .1);
+
+// Variaveis End
+
+section {
+    padding: 5rem 3%;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+
+    &::-webkit-scrollbar {
+        width: 1rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $branco;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $Black;
+    }
+}
+
+@mixin grid($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap: 1.5rem;
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    border: 2px solid #10221b;
+    color: #10221b;
+    cursor: pointer;
+    background: none;
+    font-size: 1.7rem;
+    padding: 1rem 3rem;
+
+    &:hover {
+        background: $Black;
+        color: $branco;
+    }
+}
+
+.titulo{
+    font-family: 'poppins', sans-serif;
+    text-align: center;
+    margin-bottom: 5.5rem;
+    font-size: 4rem;
+    color: #10221b;
+}
+/* Header
+============================================= */
+
+.header {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10000;
+    background: transparent;
+
+    .header__logo {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #10221b;
+        margin-right: auto;
+
+
+        i {
+            color: $verde;
+        }
+    }
+
+    .nav {
+
+        #nav-close {
+            font-size: 5rem;
+            color: $Black;
+            display: none;
+            cursor: pointer;
+        }
+
+        a {
+            font-size: 1.7rem;
+            text-decoration: none;
+            color: $Black;
+            margin-right: 1.5rem;
+
+            &:hover {
+                color: $verde;
+                transition: 0.5s;
+            }
+        }
+    }
+
+    .icons a,
+    .icons div {
+        font-size: 2.5rem;
+        margin-right: 1.2rem;
+
+        &:hover {
+            color: $verde;
+            transition: 0.5s;
+        }
+    }
+
+    #menu-btn {
+        display: none;
+    }
+
+    &.active {
+        background: #fff;
+        box-shadow: $sombra;
+    }
+
+}
+
+/* Header End
+============================================= */
+
+/* Search
+============================================= */
+
+.form__search{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-110%);
+    z-index: 10000;
+
+    &.active{
+        transform: translateY(0);
+    }
+
+    form{
+        width: 70vh;
+        display: flex;
+        border-bottom: 0.2rem solid rgb(255, 255, 255);
+        margin: 0 2rem;
+        align-items: center;
+
+        input{
+            width: 100%;
+            background: transparent;
+            outline: none;
+            margin-left: 2rem;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: $branco;
+            
+        }
+
+        label{
+            font-size: 3rem;
+            cursor: pointer;
+            color: $branco;
+            margin-bottom: 2rem;
+
+            &:hover{
+                color: $verde;
+                transition: 0.5s;
+            }
+        }
+    }
+
+    #close-search {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 2rem;
+        font-size: 5rem;
+        color: $branco;
+    } 
+}
+/* Search End
+============================================= */
+
+/* Home
+============================================= */
+
+main{
+    .home{
+        padding: 0;
+    
+        .box{
+            min-height: 100vh;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-size: cover !important;
+            background-position: center !important;
+            flex-direction: flex-end;
+            padding: 2rem 9%;
+    
+            &.second {
+                justify-content: flex-start;
+            }
+    
+            .content{
+                width: 50rem;
+    
+    
+                span{
+                    font-size: 4rem;
+                    color: $Black;
+                }
+    
+                h3{
+                    font-size: 5rem;
+                    color: #219150;
+                    padding: 0.5rem 0;
+                    font-family: 'Poppins', sans-serif;
+                }
+    
+                p{
+                    line-height: 2;
+                    font-size: 1.5rem;
+                    color: $Black;
+                    padding-bottom:  1.5rem;
+                }
+            }
+        }
+    }
+    
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 3rem;
+        color: $Black;
+    }
+    
+    
+    /* Home / End
+    ============================================= */
+    
+    /* Categoria 
+    ============================================= */
+    
+    .categoria{
+    
+        .categoria__conteiner{
+            @include grid(25rem);
+            width: 100%;
+            
+            .categoria__box{
+                padding: 1rem;
+                text-align: center;
+    
+                figure{
+    
+                    img{
+                        width: 17rem;
+                        height: 17rem;
+                        border-radius: 50%;
+                        margin-bottom: 1.5rem;
+                    }
+                }
+    
+                h3{
+                    color: $verde;
+                    font-size: 2rem;
+                    margin-bottom: 1.5rem;
+                    
+                }
+    
+                p{
+                    font-size: 1.3rem;
+                    line-height: 1.7;
+                    color: $Black;
+                    margin-bottom: 1rem;
+                    padding: 0 2rem;
+                }
+            }
+    
+           
+        }
+    }
+    
+    /* Categoria / End
+    ============================================= */
+    
+    /* Sobre
+    ============================================== */
+    
+    .sobre{
+        background: $cinza__claro;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2rem;
+    
+        figure{
+            flex: 1 1 42rem;
+            padding-right: 5rem;
+            padding-bottom: 5rem;
+    
+            img{
+                width: 100%;
+                box-shadow: 4rem 4rem 0 rgba(0, 0, 0, .1);
+            }
+        }
+    
+        .content{
+            flex: 1 1 42rem;
+            line-height: 2;
+    
+            h3{
+                font-size: 3rem;
+                color: #219150;
+                margin-bottom: 2rem;
+            }
+    
+            p{
+                font-size: 1.5rem;
+                color: #10221b;
+                margin-bottom: 1rem;
+            }
+    
+            .btn{
+                padding: 0.5rem 3rem;
+            }
+        }
+    }
+    
+    /* Sobre / End
+    ============================================== */
+    
+    /* Loja 
+    ============================================= */
+    
+    .loja{
+    
+        .slide{
+            width: 35rem;
+            border: $borda;
+    
+            &:hover{
+                .icons {
+                    transform: translateY(0);
+                    height: 30%;
+                    
+                }
+            }
+    
+            .image{
+                width: 100%;
+                overflow: hidden;
+    
+                img{
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+    
+            .icons{
+                position: absolute;
+                width: 100%;
+                left: 0;
+                z-index: 10;
+                text-align: center;
+                transform: translateY(7rem);
+                bottom: 2rem;
+                
+    
+                a{
+                    width: 4.5rem;
+                    height: 4.5rem;
+                    background: rgb(0, 0, 0);
+                    color: #fff;
+                    font-size: 1.7rem;
+                    line-height: 4.5rem;
+                    margin: 0 .2rem;
+    
+                    &:hover{
+                        background: $verde;
+                    }
+                    
+                }
+            }
+    
+            
+        }
+    
+        .content{
+            text-align: center;
+            line-height: 2rem;
+    
+            h3{
+                color: black;
+                font-size: 2rem;
+            }
+    
+            .preço{
+                padding: 1rem;
+                font-size: 2rem;
+                color: #219150;
+            }
+    
+            .strela{
+                font-size: 1.5rem;
+                color: #219150;
+            }
+        }
+    }
+    
+    /* Loja / End
+    ============================================= */
+    
+    /* Pacotes
+    ============================================ */
+    
+    .pacotes{
+        background: $cinza__claro;
+        
+    
+        .pacotes__conteiner{
+            @include grid(35rem);
+    
+            .pocotes__box{
+             border: $borda;
+             background: $branco;
+    
+             &:hover{
+                background: $Black;
+                cursor: pointer;
+    
+                .content > *{
+                    color: #fff;
+                }
+    
+                .btn{
+                    border-color: $branco;
+    
+                    &:hover{
+                        background: $branco;
+                        color: #10221b;
+                    }
+                }
+             }
+            }
+    
+            figure{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                padding: 2rem;
+                padding-bottom: 0;
+                height: 25rem;
+                border-radius: 0.5rem;
+    
+                img{
+                    width: 90%;
+                    object-fit: cover;
+                    border-radius: .5rem;
+                    margin-top: 2rem;
+                }
+    
+            }
+    
+            .content{
+                text-align: center;
+                line-height: 2;
+                padding: 3rem;
+    
+                h3{
+                    font-size: 2rem;
+                }
+    
+                p{
+                    font-size: 1.5rem;
+                    padding-bottom: 1rem;
+                }
+    
+                .preço{
+                    color: #219150;
+                    font-size: 1.5rem;
+                }
+    
+            }
+        }
+    }
+    
+    /* Pacotes / end
+    ============================================ */
+    
+    /* Comentarios
+    ============================================ */
+    
+    .comentarios{
+    
+        .slide{
+    
+            .text{
+                font-size: 1.2rem;
+                position: relative;
+                background: #eee;
+                border-radius: 3px;
+                margin-bottom: 3rem;
+                color: #10221b;
+                line-height: 2;
+                z-index: 0;
+                padding: 3rem;
+    
+                &:before{
+                    content: "";
+                    position: absolute;
+                    width: 2rem;
+                    height: 2rem;
+                    background: $cinza__claro;
+                    bottom: -1.2rem;
+                    transform: rotate(45deg);
+                    left: 0.7rem;
+                }
+            }
+    
+            .user{
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+    
+                figure{
+    
+                    img{
+                        width: 7rem;
+                        height: 7rem;
+                        border-radius: 50px;
+                    }
+                }
+    
+                .info{
+                    h3{
+                        font-size: 2rem;
+                        color: $Black;
+                        margin-bottom: 2px;
+                    }
+    
+                    span{
+                        color: $verde;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    
+    }
+    
+    /* Comentarios / End
+    ============================================ */
+    
+    /* Serviços
+    =========================================== */
+    
+    .serviços{
+        background: $cinza__claro;
+    
+        .serviço__conteiner{
+            @include grid(35rem);
+            gap: 1.5rem;
+    
+            .serviços__box{
+                text-align: center;
+                border: 2px solid #10221b;
+                height: 35rem;
+                padding: 2rem;
+                background: #fff;
+                border-radius: .5rem;
+    
+                &:hover{
+                    background: $Black;
+                    cursor: pointer;
+    
+                    img{
+                        filter: invert(1);
+                    }
+    
+                    article{
+    
+                        p{
+                            color: #fff;
+                        }
+    
+                        .btn{
+                            border-color: #fff;
+                            color: #fff;
+    
+                            &:hover{
+                                background: #fff;
+                                color: #10221b;
+                            }
+                        }
+                    }
+                    
+                }
+    
+                article{
+                    
+                    
+                    h3{
+                        color: #219150;
+                        font-size: 2rem;
+                        font-weight: bold;
+                        padding: 1rem;
+                    }
+    
+                    p{
+                        font-size: 1.2rem;
+                        line-height: 2;
+                    }
+                }
+            }
+        }
+    }
+    
+    /* Serviços / End
+    =========================================== */
+    
+    /* Blog
+    =========================================== */
+    
+    .Blog{
+    
+        .slide{
+            padding: 2rem;
+            text-align: center;
+            
+            img{
+                width: 100%;
+                height: 32rem;
+                border-radius: .7rem;
+                object-fit: cover;
+            }
+    
+            .icons{
+                padding: 1rem 1.5rem;
+                position: relative;
+                top: -2rem;
+                border-radius: .5rem;
+                background: $Black;
+                display: inline-block;
+                
+                a{
+                    color: #fff;
+                    font-size: 1.4rem;
+    
+                    &:hover {
+                        color: #219150;
+                    }
+    
+                    i{
+                        padding-right: .5rem;
+                        color: #219150;
+                    }
+                }
+    
+                
+            }
+    
+            h3{
+                font-size: 2rem;
+                color: #10221b;
+            }
+    
+            p{
+                font-size: 1.2rem;
+                padding: 1rem 0;
+                line-height: 2;
+                color: $Black;
+            }
+    
+        }
+    }
+    
+    /* Blog / End
+    =========================================== */
+    
+    /* Escreva-se 
+    ============================================ */
+    
+    .Escreva-se{
+        background: $cinza__claro;
+    
+        .content{
+            max-width: 60rem;
+            margin: 0.5rem auto;
+            text-align: center;
+            
+    
+            p{
+                font-size: 1.5rem;
+                line-height: 2;
+                color: $Black;
+            }
+    
+            form{
+                margin-top: 2rem;
+                padding: 0.7rem;
+                border: 2px solid #10221b;
+                display: flex;
+    
+                .Email{
+                    width: 100%;
+                    background: none;
+                    text-decoration: none;
+                    padding: 1.3rem;
+                    font-size: 1.5rem;
+                }
+    
+                .btn{
+                    margin-top: 0;
+                    border-radius: 5rem;
+                    background: $Black;
+                    color: $branco;
+    
+                    &:hover{
+                        background: $branco;
+                        color: $Black;
+                        
+                    }
+                }
+            }
+        }
+
+/* Escreva-se / End
+============================================ */
+    }
+}
+
+
+
+
+
+/* Footer
+============================================ */
+
+.footer{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,.5) , rgba(0,0,0,.5)), url(../images/footer-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    .conteiner{
+        @include grid(25rem);
+
+        .box{
+            padding: 3rem 2rem;
+
+            h3{
+                font-size: 2rem;
+                padding: 1.5rem 0;
+                color: #fff;
+
+            }
+
+            a{
+                display: block;
+                font-size: 1.4rem;
+                color: $branco;
+                padding: 1rem 0;
+
+                i{
+                    color: #219150;
+                    padding-right: .5rem;
+                }
+
+                &:hover{
+                    color: $verde;
+
+                    i{
+                        padding-right: 2rem;
+                    }
+                }
+            }
+        }
+    }
+    .creditos{
+        text-align: center;
+        margin-top: 2.5rem;
+        padding: 1rem;
+        padding-top: 2.5rem;
+        font-size: 2rem;
+        color: #fff;
+    
+        span{
+            color: #219150;
+        }
+    }
+}
+
+/* Footer / End
+============================================ */
+
+
+/* Media Queri
+========================================================*/
+
+@media (max-width: 1200px) {
+    .header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 3rem 2rem;
+    }
+    
+}
+
+@media (max-width: 971px) {
+    .header {
+        .nav {
+
+            a {
+                font-size: 1.5rem;
+            }
+        }
+
+        .icons a,
+        .icons div {
+            font-size: 2.2rem;
+        }
+    }
+
+    .home{
+
+        .box{
+            padding: 2rem;
+            justify-content: center;
+            text-align: center;
+            background-position: right !important;
+
+            &.second {
+                padding: 2rem;
+                justify-content: center;
+                text-align: center;
+                background-position: left !important;
+            }
+
+            .content{
+                span{
+                    font-size: 3rem;
+                }
+                h3{
+                    font-size: 4rem;
+                }
+                p{
+                    font-size: 1.3rem;
+                }
+            }
+    
+        }
+    }
+
+}
+
+@media (max-width: 707px) {
+    .header{
+
+        .nav{
+           width: 35rem;
+           height: 100%;
+           top: 0;
+           left: 0;
+           position: fixed;
+           left: -110%;
+           display: flex;
+           flex-direction: column;
+           z-index: 1000;
+           justify-content: center;
+           align-items: center;
+           background: $branco;
+
+           &.active{
+            box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 0px 100vw;
+            left: 0px;
+        }
+
+           a{
+               font-size: 2rem;
+               margin-bottom: 1rem;
+           }
+           
+           #nav-close{
+               display: block;
+               position: absolute;
+               top: 0;
+               right: 0;
+               padding: 1rem;
+           }
+
+        }
+
+        #menu-btn {
+            display: inline-block;
+            color: $Black;
+
+            &:hover{
+                color: $verde;
+                transition: 0.5s;
+            }
+        }
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+    display: none;
+}
+}
+
